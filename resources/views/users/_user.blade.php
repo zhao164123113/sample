@@ -1,6 +1,8 @@
 <li>
-<img src="{{ $user->gravatar() }}" alt="{{ $user->name }}" class="gravatar"/>
+<div style="float: left">
+<img src="{{ $user->gravatar() }}" alt="{{ $user->name }}" class="gravatar" style="width: 80px; height: 80px; border-radius: 40px;" />
 <a href="{{ route('users.show', $user->id) }}" class="username">{{ $user->name }}</a>
+</div>
 
 @can('destroy', $user)
     <form action="{{ route('users.destroy', $user->id) }}" method="post">
